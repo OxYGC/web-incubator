@@ -1,19 +1,7 @@
 {
   "categoryList": [
     {"id": 1767546542043, "name": "热门推荐", "weight": -1},
-    { "id": 1, "name": "行情与数据", "desc": "市场行情与聚合数据", "weight": 0 },
-    { "id": 2, "name": "区块链浏览器", "desc": "主流链浏览器", "weight": 1 },
-    { "id": 3, "name": "华语社区", "desc": "开发者与用户活跃的区块链社区平台", "weight": 2 },
 
-    {"id": 20000, "name": "x个人频道", "weight": 3},
-    { "id": 3, "name": "研究与分析", "desc": "投研、链上分析", "weight": 3 },
-    { "id": 4, "name": "DeFi 协议", "desc": "DeFi 协议与工具", "weight": 3 },
-    { "id": 5, "name": "空投与任务", "desc": "空投与任务平台", "weight": 4 },
-    { "id": 6, "name": "Layer2 / Rollup", "desc": "L2 与扩容方案", "weight": 5 },
-    { "id": 7, "name": "NFT 平台", "desc": "NFT 市场与工具", "weight": 6 },
-    { "id": 8, "name": "开发者资源", "desc": "Web3 开发工具与文档", "weight": 7 },
-    { "id": 9, "name": "基础设施", "desc": "RPC / 节点 / Infra", "weight": 8 },
-    { "id": 11, "name": "知名社区", "desc": "开发者与用户活跃的区块链社区平台", "weight": 9 },
     {"id": 10000, "name": "其他", "weight": 10},
 
     { "id": 10, "name": "安全与审计", "desc": "安全工具与审计机构", "weight": 9 }
@@ -51,9 +39,9 @@
     },
     {
       "id": 2006,
-      "categoryId": 1767546542044,
-      "name": "汇率&梯度计算器",
-      "desc": "金额汇率&梯度计算器",
+      "categoryId": 1767546542043,
+      "name": "美元梯度换算器",
+      "desc": "美元/人民币汇率梯度计算工具",
       "url": "https://fin1.yanggc.fun/",
       "logoUrl": "https://favicon.im/https://fin1.yanggc.fun/",
       "weight": 5,
