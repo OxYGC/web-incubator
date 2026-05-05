@@ -1,9 +1,7 @@
 {
   "categoryList": [
     {"id": 1767546542043, "name": "热门推荐", "weight": -1},
-
     {"id": 10000, "name": "其他", "weight": 10},
-
     { "id": 10, "name": "安全与审计", "desc": "安全工具与审计机构", "weight": 9 }
   ],
   "data": [
