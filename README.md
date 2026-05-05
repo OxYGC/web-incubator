@@ -30,7 +30,7 @@ It serves as a space for:
 | ![](./assets/demo2.png) | Glass UI | macOS-style glass interface | [View](./projects/glass-ui) |
 | ![](./assets/demo3.png) | Landing Page | Simple modern landing page | [View](./projects/landing-page) |
 
-
+### nav-personal
 
 
 <img width="1292" height="1021" alt="image" src="https://github.com/user-attachments/assets/40ee7d36-9a26-44f9-964c-9d8f7e635fae" />
