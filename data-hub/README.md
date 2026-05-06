@@ -23,9 +23,11 @@ EN
 ---
 
 ##  Structure | 目录结构
-
-data-hub/ ├── mock/        # API mock data ├── config/      # public configurations ├── scripts/     # JSON scripts / rules ├── fixtures/    # test datasets
-
+data-hub/
+├── mock/        # API mock 数据
+├── config/      # 公共配置
+├── scripts/     # JSON脚本/规则
+├── fixtures/    # 测试数据
 ---
 
 ##  Usage | 使用方式
