@@ -1,0 +1,38 @@
+{
+  "categoryList": [
+    {
+      "id": 1,
+      "name": "默认分类",
+      "desc": "用于测试的默认分类",
+      "weight": 0
+    },
+    {
+      "id": 2,
+      "name": "工具资源",
+      "desc": "用于测试的工具资源分类",
+      "weight": 1
+    }
+  ],
+  "data": [
+    {
+      "id": 1001,
+      "categoryId": 1,
+      "name": "示例站点",
+      "desc": "用于测试导航列表渲染的默认站点",
+      "url": "https://example.com",
+      "logoUrl": "https://www.google.com/s2/favicons?sz=64&domain=example.com",
+      "weight": 0,
+      "date": "2026-05-06"
+    },
+    {
+      "id": 1002,
+      "categoryId": 2,
+      "name": "测试工具",
+      "desc": "用于测试分类筛选、排序与图标加载的默认工具",
+      "url": "https://developer.mozilla.org",
+      "logoUrl": "https://www.google.com/s2/favicons?sz=64&domain=developer.mozilla.org",
+      "weight": 1,
+      "date": "2026-05-06"
+    }
+  ]
+}
