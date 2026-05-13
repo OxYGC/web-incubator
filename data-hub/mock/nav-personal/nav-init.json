@@ -50,14 +50,7 @@
     { "id": 10003, "categoryId": 10000, "name": "狗狗加速器", "desc": "Doge网络加速服务", "url": "https://go.dginv.click/#/register?code=HdG1bIeo", "logoUrl": "https://wgetcloud.ltd/favicon.ico", "weight": 0, "date": "2024-06-12" },
     { "id": 10004, "categoryId": 10000, "name": "TAG节点", "desc": "TAG全球网络加速服务", "url": "https://tagss.pro/#/auth/SZcoBKK5", "logoUrl": "https://tagss.pro/theme/newtheme/assets/tag-white-64db6e6e.png", "weight": 0, "date": "2024-06-12" },
 
-    {
-      "name": "毒奶计划",
-      "url": "https://limbopro.com/",
-      "desc": "个人博客",
-      "categoryId": 1767546542043,
-      "id": 1777799734230,
-      "weight": 266
-    },
+
     {
       "name": "AppsTorrent",
       "url": "https://appstorrent.ru/",
