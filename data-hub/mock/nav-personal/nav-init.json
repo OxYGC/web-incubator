@@ -13,25 +13,30 @@
       "weight": 0
     },
     {
+      "id": 1782873468775,
+      "name": "技术站点",
+      "weight": 1
+    },
+    {
       "id": 1782699331250,
       "name": "资讯/财报",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": 10,
       "name": "安全与审计",
       "desc": "安全工具与审计机构",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": 10000,
       "name": "其他",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": 1782701264641,
       "name": "Friends",
-      "weight": 99
+      "weight": 5
     }
   ],
   "data": [
@@ -319,6 +324,22 @@
       "desc": "币链快报",
       "categoryId": 1782699331250,
       "id": 1782702645889,
+      "weight": 99
+    },
+    {
+      "name": "美团-技术团队",
+      "url": "https://tech.meituan.com/",
+      "desc": "美团技术部门",
+      "categoryId": 1782873468775,
+      "id": 1782873445208,
+      "weight": 99
+    },
+    {
+      "name": "CSDN-架构师尼恩",
+      "url": "https://blog.csdn.net/crazymakercircle?type=blog",
+      "desc": "45岁资深老架构师尼恩-CSDN博客",
+      "categoryId": 1782873468775,
+      "id": 1782873678215,
       "weight": 99
     }
   ]

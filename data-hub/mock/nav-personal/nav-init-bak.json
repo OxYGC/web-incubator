@@ -27,6 +27,11 @@
       "id": 10000,
       "name": "其他",
       "weight": 3
+    },
+    {
+      "id": 1782701264641,
+      "name": "Friends",
+      "weight": 99
     }
   ],
   "data": [
@@ -41,23 +46,13 @@
       "date": "2024-06-12"
     },
     {
-      "id": 2004,
-      "categoryId": 1767546542043,
-      "name": "Oxygen",
-      "desc": "Oxygen个人博客",
-      "url": "https://blog.yanggc.fun/",
-      "logoUrl": "https://favicon.im/blog.yanggc.fun",
-      "weight": 3,
-      "date": "2024-06-12"
-    },
-    {
       "id": 2005,
       "categoryId": 1767546542043,
       "name": "资产收益计算器",
       "desc": "个人资产收益计算器",
       "url": "https://fin.yanggc.fun/",
       "logoUrl": "https://favicon.im/fin.yanggc.fun",
-      "weight": 4,
+      "weight": 1,
       "date": "2024-06-12"
     },
     {
@@ -67,7 +62,7 @@
       "desc": "美元/人民币汇率梯度计算工具",
       "url": "https://fin1.yanggc.fun/",
       "logoUrl": "https://favicon.im/https://fin1.yanggc.fun/",
-      "weight": 5,
+      "weight": 2,
       "date": "2024-06-12"
     },
     {
@@ -77,7 +72,7 @@
       "desc": "稳定好用的商业科学上网节点",
       "url": "https://secure.shadowsocks.au/aff.php?aff=47119",
       "logoUrl": "https://portal.shadowsocks.au/favicon.ico",
-      "weight": 0,
+      "weight": 3,
       "date": "2024-06-12"
     },
     {
@@ -87,7 +82,7 @@
       "desc": "WgetCloud全球网络加速服务",
       "url": "https://invite.wgetcloud.ltd/auth/register?code=Fyr3A6",
       "logoUrl": "https://wgetcloud.ltd/favicon.ico",
-      "weight": 0,
+      "weight": 4,
       "date": "2024-06-12"
     },
     {
@@ -97,7 +92,7 @@
       "desc": "Doge网络加速服务",
       "url": "https://go.dginv.click/#/register?code=HdG1bIeo",
       "logoUrl": "https://wgetcloud.ltd/favicon.ico",
-      "weight": 0,
+      "weight": 5,
       "date": "2024-06-12"
     },
     {
@@ -107,7 +102,7 @@
       "desc": "TAG全球网络加速服务",
       "url": "https://tagss.pro/#/auth/SZcoBKK5",
       "logoUrl": "https://tagss.pro/theme/newtheme/assets/tag-white-64db6e6e.png",
-      "weight": 0,
+      "weight": 6,
       "date": "2024-06-12"
     },
     {
@@ -116,7 +111,7 @@
       "desc": "MacOS应用第一大站点",
       "categoryId": 1777884456286,
       "id": 1777884615639,
-      "weight": 267
+      "weight": 7
     },
     {
       "name": "Digit77",
@@ -124,7 +119,7 @@
       "desc": "MacOS应用第一站",
       "categoryId": 1777884456286,
       "id": 1777884792978,
-      "weight": 268
+      "weight": 8
     },
     {
       "name": "xmac",
@@ -132,7 +127,7 @@
       "desc": "AppsTorrent的国内增强版(捐助后获得国内的下载链接)",
       "categoryId": 1777884456286,
       "id": 1777885421709,
-      "weight": 269
+      "weight": 9
     },
     {
       "name": "Torrentmac",
@@ -140,7 +135,7 @@
       "desc": "Mac 软件应用免费下载站",
       "categoryId": 1777884456286,
       "id": 1777884950419,
-      "weight": 270
+      "weight": 10
     },
     {
       "id": 1001,
@@ -149,7 +144,7 @@
       "desc": "DAO 创建与治理基础设施",
       "url": "https://aragon.org/",
       "logoUrl": "https://aragon.org/favicon.ico",
-      "weight": 0,
+      "weight": 11,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -159,7 +154,7 @@
       "desc": "去中心化投票与治理工具",
       "url": "https://snapshot.org/",
       "logoUrl": "https://snapshot.org/favicon.ico",
-      "weight": 1,
+      "weight": 12,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -169,7 +164,7 @@
       "desc": "DAO 治理与提案管理平台",
       "url": "https://www.tally.xyz/",
       "logoUrl": "https://tally.xyz/favicon.ico",
-      "weight": 2,
+      "weight": 13,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -179,7 +174,7 @@
       "desc": "DAO 治理框架与工具",
       "url": "https://daostack.io/",
       "logoUrl": "https://daostack.io/favicon.ico",
-      "weight": 3,
+      "weight": 14,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -189,7 +184,7 @@
       "desc": "去中心化组织协作平台",
       "url": "https://colony.io/",
       "logoUrl": "https://colony.io/favicon.ico",
-      "weight": 4,
+      "weight": 15,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -199,7 +194,7 @@
       "desc": "DAO 多签与资产管理工具",
       "url": "https://safe.global/",
       "logoUrl": "https://safe.global/favicon.ico",
-      "weight": 5,
+      "weight": 16,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -209,7 +204,7 @@
       "desc": "DAO 资金管理与筹资协议",
       "url": "https://juicebox.money/",
       "logoUrl": "https://juicebox.money/favicon.ico",
-      "weight": 6,
+      "weight": 17,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -219,7 +214,7 @@
       "desc": "DAO 社区治理与讨论平台",
       "url": "https://commonwealth.im/",
       "logoUrl": "https://commonwealth.im/favicon.ico",
-      "weight": 7,
+      "weight": 18,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -229,7 +224,7 @@
       "desc": "DAO 文档与治理协作工具",
       "url": "https://charmverse.io/",
       "logoUrl": "https://charmverse.io/favicon.ico",
-      "weight": 8,
+      "weight": 19,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -239,7 +234,7 @@
       "desc": "DAO 快速创建与管理平台",
       "url": "https://superdao.co/",
       "logoUrl": "https://superdao.co/favicon.ico",
-      "weight": 9,
+      "weight": 20,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -249,7 +244,7 @@
       "desc": "AI 驱动的链上竞技与治理实验",
       "url": "https://aiarena.io/",
       "logoUrl": "https://aiarena.io/favicon.ico",
-      "weight": 10,
+      "weight": 21,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -259,7 +254,7 @@
       "desc": "去中心化 AI 与自治代理网络",
       "url": "https://fetch.ai/",
       "logoUrl": "https://fetch.ai/favicon.ico",
-      "weight": 11,
+      "weight": 22,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -269,7 +264,7 @@
       "desc": "去中心化 AI 服务市场",
       "url": "https://singularitynet.io/",
       "logoUrl": "https://singularitynet.io/favicon.ico",
-      "weight": 12,
+      "weight": 23,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -279,7 +274,7 @@
       "desc": "AI 与数据共享的 Web3 协议",
       "url": "https://oceanprotocol.com/",
       "logoUrl": "https://oceanprotocol.com/favicon.ico",
-      "weight": 13,
+      "weight": 24,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -289,7 +284,7 @@
       "desc": "自治 AI Agent 与 DAO 基础设施",
       "url": "https://www.autonolas.network/",
       "logoUrl": "https://autonolas.network/favicon.ico",
-      "weight": 14,
+      "weight": 25,
       "date": "2025-01-01 00:00:00"
     },
     {
@@ -298,6 +293,32 @@
       "desc": "Trendforce行业研究报告",
       "categoryId": 1782699331250,
       "id": 1782699394152,
+      "weight": 26
+    },
+    {
+      "id": 2004,
+      "categoryId": 1782701264641,
+      "name": "Oxygen",
+      "desc": "Oxygen个人博客",
+      "url": "https://blog.yanggc.fun/",
+      "logoUrl": "https://favicon.im/blog.yanggc.fun",
+      "weight": 27,
+      "date": "2024-06-12"
+    },
+    {
+      "name": "毒奶导航",
+      "url": "https://limbopro.com/daohang/index.html#gsc.tab=0",
+      "desc": "毒奶导航站点-比较优质的站点",
+      "categoryId": 1782701264641,
+      "id": 1782702071566,
+      "weight": 28
+    },
+    {
+      "name": "chainalert",
+      "url": "https://chainalert.me/",
+      "desc": "币链快报",
+      "categoryId": 1782699331250,
+      "id": 1782702645889,
       "weight": 99
     }
   ]
