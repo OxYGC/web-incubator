@@ -18,25 +18,30 @@
       "weight": 1
     },
     {
+      "id": 1782875374483,
+      "name": "AI资源",
+      "weight": 2
+    },
+    {
       "id": 1782699331250,
       "name": "资讯/财报",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": 10,
       "name": "安全与审计",
       "desc": "安全工具与审计机构",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": 10000,
       "name": "其他",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": 1782701264641,
       "name": "Friends",
-      "weight": 5
+      "weight": 6
     }
   ],
   "data": [
@@ -340,6 +345,46 @@
       "desc": "45岁资深老架构师尼恩-CSDN博客",
       "categoryId": 1782873468775,
       "id": 1782873678215,
+      "weight": 99
+    },
+    {
+      "name": "JavaGuide-面试资料",
+      "url": "https://javaguide.cn/",
+      "desc": "JavaGuide包含Java/AI相关面试资料",
+      "categoryId": 1782873468775,
+      "id": 1782874484576,
+      "weight": 99
+    },
+    {
+      "name": "IT之家",
+      "url": "https://www.ithome.com/",
+      "desc": "IT之家-IT资讯第一站",
+      "categoryId": 1782699331250,
+      "id": 1782874959736,
+      "weight": 99
+    },
+    {
+      "name": "SkillHub - AI Skills 社区",
+      "url": "https://skillhub.cn/",
+      "desc": "中国用户优化的 AI Skills 社区",
+      "categoryId": 1782875374483,
+      "id": 1782875427678,
+      "weight": 99
+    },
+    {
+      "name": "LiblibAI (哩布哩布)",
+      "url": "https://www.liblib.art/",
+      "desc": "国内头部 AI 创作平台，内置大量中文 SD/MJ 提示词和模型资源",
+      "categoryId": 1782875374483,
+      "id": 1782875583926,
+      "weight": 99
+    },
+    {
+      "name": "PromptBase-Prompt 交易市场",
+      "url": "https://promptbase.com/",
+      "desc": "全球最知名的 Prompt 交易市场，支持 DALL-E/Midjourney/GPT 等，生态成熟",
+      "categoryId": 1782875374483,
+      "id": 1782875915448,
       "weight": 99
     }
   ]
