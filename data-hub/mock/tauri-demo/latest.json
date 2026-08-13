@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "notes": "Draft release, will be updated later.",
+  "pub_date": "1999-12-31T23:59:59.356Z",
+  "force_update": false,
+  "min_supported_version": "0.0.1",
+  "changelog_url": "https://google.com",
+
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZnZmbStDeStNMGd0MndNbldMaUZrN2kzYzdtdUtMU0xWcjdZRmkxcU9lWExlaVh3MnZ6WFl5cXdPaE96Z05sY2FyUlBna214TVJkUThuTDhXWjJrb3NHVjdBTzBNeVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NDc5NDMzCWZpbGU6Q2xhc2ggVmVyZ2UuYXBwLnRhci5negpVVnBVM3hrQnUvTDFZZHJBRENEUzBZUmVrS0pta1ZZSnBodktGZElyTmxUdTE4bzRKK054ai82cEFESHg5dFl5VkdvaDdrSXF3V2xENjI2Y0dLVGxCZz09Cg==",
+      "url": "https://api.github.com/repos/xxx/releases/assets/482559054"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZnZmbStDeStNMHFIWko0bWJSajNxYjJzaThRcVp1Z2pmZjFRUUJuOXlOUkhaekhmdmVmaUNQQUlPekxzZG96UEJZK3FhRVJVSUdzclc0Z3RxSWVRQ0cxa2NlZWl1a0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NDc5NTY4CWZpbGU6Q2xhc2ggVmVyZ2VfMi41LjJfeDY0LXNldHVwLmV4ZQovWXZTWGQ3ZnczT3ppcW9KNUJiYVZ5K1JDUFRDeUltMWMrMmNIMWQ3aTIyWlRDc1B2YUxEU1NXUjBqLzl6Z1NpRWhWSmxoWnpjbXdoaGtVTlBjRU9DZz09Cg==",
+      "url": "https://api.github.com/repos/xxx/releases/assets/482560094"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZnZmbStDeStNMHFIWko0bWJSajNxYjJzaThRcVp1Z2pmZjFRUUJuOXlOUkhaekhmdmVmaUNQQUlPekxzZG96UEJZK3FhRVJVSUdzclc0Z3RxSWVRQ0cxa2NlZWl1a0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg0NDc5NTY4CWZpbGU6Q2xhc2ggVmVyZ2VfMi41LjJfeDY0LXNldHVwLmV4ZQovWXZTWGQ3ZnczT3ppcW9KNUJiYVZ5K1JDUFRDeUltMWMrMmNIMWQ3aTIyWlRDc1B2YUxEU1NXUjBqLzl6Z1NpRWhWSmxoWnpjbXdoaGtVTlBjRU9DZz09Cg==",
+      "url": "https://api.github.com/repos/xxx/releases/assets/482560094"
+    }
+  }
+}
