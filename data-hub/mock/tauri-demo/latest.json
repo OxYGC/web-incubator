@@ -1,9 +1,9 @@
 {
-  "version": "0.0.1",
+  "version": "0.1.1",
   "notes": "Draft release, will be updated later.",
   "pub_date": "1999-12-31T23:59:59.356Z",
   "force_update": false,
-  "min_supported_version": "0.0.1",
+  "min_supported_version": "0.0.5",
   "changelog_url": "https://google.com",
 
   "platforms": {
