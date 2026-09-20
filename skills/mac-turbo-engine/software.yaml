@@ -1,0 +1,258 @@
+# ============================================================
+# 软件配置清单 (Software Manifest)
+# Mac Turbo Engine — Phase 2 使用此清单
+#
+# 优先级说明:
+#   P0 (Critical) — 系统运行必需、安全工具
+#   P1 (High)     — 日常开发核心工具
+#   P2 (Medium)   — 效率工具
+#   P3 (Low)      — 按需工具
+#
+# 源类型 (source):
+#   brew — Homebrew cask/formula
+#   mas  — Mac App Store (需先 brew install mas)
+#   url  — 自定义直链下载 .dmg/.pkg/.zip
+# ============================================================
+
+software:
+
+  # ==========================================================
+  # P0 — Critical (系统必需 / 安全工具)
+  # ==========================================================
+  - name: "Google Chrome"
+    priority: P0
+    source: brew
+    formula: "google-chrome"
+    check: "ls /Applications | grep -i 'Google Chrome.app'"
+    version: '/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --version 2>/dev/null | awk "{print \\$3}"'
+    post_install:
+      - "defaults write com.google.chrome DefaultBrowserSetting -bool true"
+
+
+  - name: "Visual Studio Code"
+    priority: P0
+    source: brew
+    formula: "visual-studio-code"
+    check: "ls /Applications | grep -i 'Visual Studio Code.app'"
+    version: "defaults read '/Applications/Visual Studio Code.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+    post_install:
+      - "code --install-extension dbaeumer.vscode-eslint"
+      - "code --install-extension esbenp.prettier-vscode"
+      - "code --install-extension ms-python.python"
+      - "code --install-extension golang.go"
+
+
+
+  # ==========================================================
+  # P1 — High (日常开发核心工具)
+  # ==========================================================
+  - name: "iTerm2"
+    priority: P1
+    source: brew
+    formula: "iterm2"
+    check: "ls /Applications | grep -i 'iTerm.app'"
+    version: "defaults read /Applications/iTerm.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+  - name: "OrbStack"
+    priority: P1
+    source: brew
+    formula: "orbstack"
+    check: "ls /Applications | grep -i 'OrbStack.app'"
+    version: "defaults read /Applications/OrbStack.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    post_install:
+      - cmd: "open -a OrbStack"
+        wait_for: "docker info"
+        timeout: 120
+    note: "Docker Desktop 轻量级替代方案，资源占用更低，启动更快"
+
+  - name: "IntelliJ IDEA"
+    priority: P1
+    source: brew
+    formula: "intellij-idea"
+    check: "ls /Applications | grep -i 'IntelliJ IDEA.app'"
+    version: "defaults read '/Applications/IntelliJ IDEA.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+
+  - name: "Docker Desktop"
+    priority: P1
+    source: brew
+    formula: "docker"
+    check: "ls /Applications | grep -i 'Docker.app'"
+    version: "defaults read /Applications/Docker.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    post_install:
+      - cmd: "open -a Docker"
+        wait_for: "docker info"
+        timeout: 120
+      - cmd: "docker pull node:20"
+        depends_on: "docker info"
+
+
+
+
+
+  - name: "Postman"
+    priority: P1
+    source: brew
+    formula: "postman"
+    check: "ls /Applications | grep -i 'Postman.app'"
+    version: "defaults read /Applications/Postman.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+
+  # ==========================================================
+  # P2 — Medium (效率工具)
+  # ==========================================================
+  - name: "App Cleaner & Uninstaller"
+    priority: P0
+    source: brew
+    formula: "app-cleaner"
+    check: "ls /Applications | grep -i 'App Cleaner.app'"
+    version: "defaults read '/Applications/App Cleaner.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+    note: "应用卸载和自启动管理工具，免费版可用"
+
+  - name: "Raycast"
+    priority: P0
+    source: brew
+    formula: "raycast"
+    check: "ls /Applications | grep -i 'Raycast.app'"
+    version: "defaults read /Applications/Raycast.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+  - name: "iShot"
+    priority: P1
+    source: brew
+    formula: "ishot"
+    check: "ls /Applications | grep -i 'iShot.app'"
+    version: "defaults read /Applications/iShot.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "全能截图与录屏工具，支持滚动截屏、OCR 文字识别、GIF 录制"
+
+  - name: "iStat Menus"
+    priority: P1
+    source: brew
+    formula: "istat-menus"
+    check: "ls /Applications | grep -i 'iStat Menus.app'"
+    version: "defaults read '/Applications/iStat Menus.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+    note: "菜单栏系统监控工具（CPU/内存/磁盘/网络/温度），付费软件"
+
+  - name: "Bartender"
+    priority: P1
+    source: brew
+    formula: "bartender"
+    check: "ls /Applications | grep -i 'Bartender.app'"
+    version: "defaults read /Applications/Bartender.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "菜单栏图标整理与隐藏工具，付费软件"
+
+  - name: "Magnet"
+    priority: P2
+    source: brew
+    formula: "magnet"
+    check: "ls /Applications | grep -i 'Magnet.app'"
+    version: "defaults read /Applications/Magnet.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "窗口分屏管理工具，快捷键一键贴靠"
+
+
+  - name: "Rectangle Pro"
+    priority: P2
+    source: brew
+    formula: "rectangle-pro"
+    check: "ls /Applications | grep -i 'Rectangle Pro.app'"
+    version: "defaults read '/Applications/Rectangle Pro.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+
+
+
+
+
+  - name: "Obsidian"
+    priority: P2
+    source: brew
+    formula: "obsidian"
+    check: "ls /Applications | grep -i 'Obsidian.app'"
+    version: "defaults read /Applications/Obsidian.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+  - name: "Notion"
+    priority: P2
+    source: brew
+    formula: "notion"
+    check: "ls /Applications | grep -i 'Notion.app'"
+    version: "defaults read /Applications/Notion.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "全能笔记与知识管理平台，支持数据库、任务管理、协作"
+
+  - name: "Typora"
+    priority: P2
+    source: brew
+    formula: "typora"
+    check: "ls /Applications | grep -i 'Typora.app'"
+    version: "defaults read /Applications/Typora.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+  - name: "Clash Verge Rev"
+    priority: P2
+    source: brew
+    formula: "clash-verge-rev"
+    check: "ls /Applications | grep -i 'Clash Verge.app'"
+    version: "defaults read '/Applications/Clash Verge.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+
+  # ==========================================================
+  # P3 — Low (按需工具)
+  # ==========================================================
+
+  - name: "OmniPlayer"
+    priority: P0
+    source: brew
+    formula: "omniplayer"
+    check: "ls /Applications | grep -i 'OmniPlayer.app'"
+    version: "defaults read /Applications/OmniPlayer.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "全能多媒体播放器，支持 4K/HDR、AirPlay 投屏、画中画"
+
+
+
+
+  - name: "Pixea"
+    priority: P3
+    source: brew
+    formula: "pixea"
+    check: "ls /Applications | grep -i 'Pixea.app'"
+    version: "defaults read /Applications/Pixea.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "极简看图工具，支持 WebP/HEIC/RAW/PSD 等现代格式，启动极快"
+
+  - name: "Discord"
+    priority: P3
+    source: brew
+    formula: "discord"
+    check: "ls /Applications | grep -i 'Discord.app'"
+    version: "defaults read /Applications/Discord.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+
+  - name: "WeChat"
+    priority: P3
+    source: brew
+    formula: "wechat"
+    check: "ls /Applications | grep -i 'WeChat.app'"
+    version: "defaults read /Applications/WeChat.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+
+  - name: "MWeb Pro"
+    priority: P3
+    source: brew
+    formula: "mweb-pro"
+    check: "ls /Applications | grep -i 'MWeb Pro.app'"
+    version: "defaults read '/Applications/MWeb Pro.app/Contents/Info.plist' CFBundleShortVersionString 2>/dev/null"
+    note: "Markdown 编辑器，对文档工程和目录管理支持较好，付费软件"
+
+  # ==========================================================
+  # Mac App Store 软件 (source: mas)
+  # ==========================================================
+  - name: "Xcode"
+    priority: P0
+    source: mas
+    app_id: 497799835
+    check: "ls /Applications | grep -i 'Xcode.app'"
+    version: "defaults read /Applications/Xcode.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+    note: "体积较大 (10GB+)，安装时间长。如仅需命令行开发可跳过，使用 Xcode CLT 即可。"
+
+  # ==========================================================
+  # 自定义 URL 安装示例
+  # ==========================================================
+  # - name: "自定义内部工具"
+  #   priority: P2
+  #   source: url
+  #   url: "https://internal.company.com/tool.dmg"
+  #   check: "ls /Applications | grep -i 'CustomTool.app'"
+  #   version: "defaults read /Applications/CustomTool.app/Contents/Info.plist CFBundleShortVersionString 2>/dev/null"
+  #   post_install:
+  #     - "/Applications/CustomTool --setup"

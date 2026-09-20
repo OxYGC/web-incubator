@@ -1,0 +1,200 @@
+# ============================================================
+# 环境配置清单 (Environment Manifest)
+# Mac Turbo Engine — Phase 1 使用此清单
+# ============================================================
+
+environment:
+
+  # ----------------------------------------------------------
+  # 1. Xcode Command Line Tools
+  # ----------------------------------------------------------
+  - name: "Xcode Command Line Tools"
+    category: "基础工具链"
+    check: "xcode-select -p"
+    install: "xcode-select --install"
+    version: "pkgutil --pkg-info=com.apple.pkg.CLTools_Executables 2>/dev/null | grep version | awk '{print $2}'"
+    note: "安装后会弹出系统对话框，需要用户手动点击「安装」并等待完成。"
+
+  # ----------------------------------------------------------
+  # 2. Homebrew
+  # ----------------------------------------------------------
+  - name: "Homebrew"
+    category: "包管理器"
+    check: "brew --version"
+    install: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    version: "brew --version | head -1 | awk \"{print \\$2}\""
+    post_install:
+      - "echo 'eval \"$(/opt/homebrew/bin/brew shellenv)\"' >> ~/.zprofile"
+      - "eval \"$(/opt/homebrew/bin/brew shellenv)\""
+    mirror_cn:
+      HOMEBREW_INSTALL_FROM_API: 1
+      HOMEBREW_API_DOMAIN: "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+      HOMEBREW_BOTTLE_DOMAIN: "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+      HOMEBREW_BREW_GIT_REMOTE: "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+      HOMEBREW_CORE_GIT_REMOTE: "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+    note: "Apple Silicon 需将 brew 添加到 PATH。中国大陆用户使用镜像源加速。"
+
+  # ----------------------------------------------------------
+  # 3. Oh My Zsh
+  # ----------------------------------------------------------
+  - name: "Oh My Zsh"
+    category: "Shell 增强"
+    check: "test -d ~/.oh-my-zsh && echo installed"
+    install: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
+    version: 'cat ~/.oh-my-zsh/lib/version.sh 2>/dev/null | grep "OMZ=" | sed "s/.*OMZ=//;s/\"//g"'
+    post_install:
+      - "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+      - "git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+    note: "安装后需在 ~/.zshrc 的 plugins 行添加 zsh-autosuggestions zsh-syntax-highlighting"
+
+  # ----------------------------------------------------------
+  # 4. Git (随 Xcode CLT 安装，此处确保版本最新)
+  # ----------------------------------------------------------
+  - name: "Git"
+    category: "版本控制"
+    check: "git --version"
+    install: "brew install git"
+    version: "git --version | awk '{print $3}'"
+    post_install:
+      - 'git config --global init.defaultBranch main'
+
+  # ----------------------------------------------------------
+  # 5. Node.js (通过 nvm 版本管理器)
+  # ----------------------------------------------------------
+  - name: "NVM (Node Version Manager)"
+    category: "语言运行时"
+    check: "command -v nvm"
+    install: 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
+    version: "nvm --version"
+    post_install:
+      - 'nvm install --lts'
+      - 'nvm use --lts'
+    note: "安装后需 source ~/.zshrc 或重开终端才能使用 nvm 命令"
+
+  - name: "Node.js (LTS via nvm)"
+    category: "语言运行时"
+    check: "node --version"
+    install: "nvm install --lts"
+    version: "node --version"
+    depends_on: "NVM (Node Version Manager)"
+
+  # ----------------------------------------------------------
+  # 6. Python
+  # ----------------------------------------------------------
+  - name: "Python"
+    category: "语言运行时"
+    check: "python3 --version"
+    install: "brew install python"
+    version: "python3 --version | awk '{print $2}'"
+
+  - name: "pip"
+    category: "语言运行时"
+    check: "pip3 --version"
+    install: "python3 -m ensurepip --upgrade"
+    version: "pip3 --version | awk '{print $2}'"
+    depends_on: "Python"
+
+  # ----------------------------------------------------------
+  # 7. Go
+  # ----------------------------------------------------------
+  - name: "Go"
+    category: "语言运行时"
+    check: "go version"
+    install: "brew install go"
+    version: "go version | awk '{print $3}' | sed 's/go//'"
+
+  # ----------------------------------------------------------
+  # 8. Rust (via rustup)
+  # ----------------------------------------------------------
+  - name: "Rust (rustup)"
+    category: "语言运行时"
+    check: "rustc --version"
+    install: 'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y'
+    version: "rustc --version | awk '{print $2}'"
+    post_install:
+      - 'source "$HOME/.cargo/env"'
+
+  # ----------------------------------------------------------
+  # 9. Java (via Homebrew)
+  # ----------------------------------------------------------
+  - name: "Java (OpenJDK)"
+    category: "语言运行时"
+    check: "java --version"
+    install: "brew install java"
+    version: "java --version 2>&1 | head -1 | awk '{print $2}'"
+    post_install:
+      - 'sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk'
+    note: "需要创建符号链接到系统 Java 目录才能被部分工具识别"
+
+  # ----------------------------------------------------------
+  # 10. SDKMAN (SDK 管理器 — 多版本 JDK 管理)
+  # ----------------------------------------------------------
+  - name: "SDKMAN"
+    category: "语言运行时"
+    check: "command -v sdk"
+    install: 'curl -s "https://get.sdkman.io" | bash'
+    version: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk version 2>/dev/null | head -1'
+    post_install:
+      - 'source "$HOME/.sdkman/bin/sdkman-init.sh"'
+    note: "用于管理多版本 JDK/GraalVM，安装后需 source ~/.zshrc 或重开终端"
+
+  - name: "GraalVM (via SDKMAN)"
+    category: "语言运行时"
+    check: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk current java 2>/dev/null | grep graal'
+    install: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install java 25.0.1-graal && sdk default java 25.0.1-graal'
+    version: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk current java 2>/dev/null'
+    depends_on: "SDKMAN"
+    note: "高性能 JDK，支持 AOT 编译和原生镜像"
+
+  # ----------------------------------------------------------
+  # 11. Maven (Java 构建工具)
+  # ----------------------------------------------------------
+  - name: "Maven"
+    category: "构建工具"
+    check: "mvn -v"
+    install: "brew install maven"
+    version: "mvn -v 2>/dev/null | head -1 | awk '{print $3}'"
+    depends_on: "Java (OpenJDK)"
+    note: "Java 项目构建和依赖管理工具"
+
+  # ----------------------------------------------------------
+  # 12. telnet (网络调试工具)
+  # ----------------------------------------------------------
+  - name: "telnet"
+    category: "网络工具"
+    check: "which telnet"
+    install: "brew install telnet"
+    version: "telnet --version 2>&1 || brew list telnet --versions 2>/dev/null | awk '{print $2}'"
+    note: "网络端口连通性测试工具"
+
+  # ----------------------------------------------------------
+  # 13. Android Platform Tools (ADB)
+  # ----------------------------------------------------------
+  - name: "Android Platform Tools (ADB)"
+    category: "开发工具"
+    check: "which adb"
+    install: "brew install android-platform-tools"
+    version: "adb version 2>/dev/null | head -1 | awk '{print $5}'"
+    note: "Android 调试桥，用于连接和调试 Android 设备"
+
+  # ----------------------------------------------------------
+  # 14. RabbitMQ (消息队列)
+  # ----------------------------------------------------------
+  - name: "RabbitMQ"
+    category: "中间件"
+    check: "brew list rabbitmq 2>/dev/null | head -1"
+    install: "brew install rabbitmq"
+    version: "brew list rabbitmq --versions 2>/dev/null | awk '{print $2}'"
+    post_install:
+      - "brew services start rabbitmq"
+    note: "消息队列中间件，默认管理面板: 127.0.0.1:15672 (guest/guest)"
+
+  # ----------------------------------------------------------
+  # 15. SSH 密钥配置
+  # ----------------------------------------------------------
+  - name: "SSH Key (ed25519)"
+    category: "安全配置"
+    check: "test -f ~/.ssh/id_ed25519 && echo exists"
+    install: 'ssh-keygen -t ed25519 -C "user@example.com" -f ~/.ssh/id_ed25519 -N ""'
+    version: 'ssh-keygen -lf ~/.ssh/id_ed25519 2>/dev/null | awk "{print \\$1, \\$2}"'
+    note: "生成前需向用户确认邮箱地址"
