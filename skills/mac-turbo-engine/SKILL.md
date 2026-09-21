@@ -16,7 +16,7 @@ description: "Automates full Mac setup: environment config, priority-based softw
 
 | 文件 | 用途 |
 |------|------|
-| `SKILL.md` | 本文件 — 主流程编排、安全准则、交互模式 |
+| `skill.md` | 本文件 — 主流程编排、安全准则、交互模式 |
 | `environment.yaml` | 环境配置清单 — Phase 1 使用的所有环境项定义 |
 | `software.yaml` | 软件配置清单 — Phase 2 使用的所有软件项定义 |
 
